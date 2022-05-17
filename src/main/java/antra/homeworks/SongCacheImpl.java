@@ -3,8 +3,8 @@ package antra.homeworks;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.PriorityQueue;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.PriorityBlockingQueue;
 
 /**
  * Create an implementation for the SongCache interface shown below, being mindful of concurrency.
@@ -65,7 +65,8 @@ public class SongCacheImpl implements SongCache {
 			6. Return it
 		 */
 		
-		PriorityQueue<String> maxHeap = new PriorityQueue<String>((s1,s2) -> {
+		// maybe no need for blocking queue, because this is local variable...
+		PriorityBlockingQueue<String> maxHeap = new PriorityBlockingQueue<>(10, (s1,s2) -> {
 			Integer numPlays1 = cache.get(s1);
 			Integer numPlays2 = cache.get(s2);
 			
