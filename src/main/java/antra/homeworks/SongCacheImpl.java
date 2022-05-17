@@ -61,7 +61,7 @@ public class SongCacheImpl implements SongCache {
 			2. Insert all the key that is stored in cache
 				3. remove smallest played count song if the max heap exceeded n, since we only need top n
 			4. Collect it to the list
-			5. Reverse the order in the list to make it descendant
+			5. Reverse the order in the list to make it descending
 			6. Return it
 		 */
 		
